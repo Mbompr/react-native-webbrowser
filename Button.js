@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Platform,
-  ActivityIndicatorIOS,
+  ActivityIndicator,
   ProgressBarAndroid,
   TouchableNativeFeedback,
 } from 'react-native';
@@ -42,7 +42,7 @@ class Button extends Component {
     _renderChildiOS() {
         if (this.props.loading) {
             return (
-                <ActivityIndicatorIOS
+                <ActivityIndicator
                     animating={true}
                     size='small'
                     style={styles.spinner}
