@@ -25,15 +25,8 @@ export default StyleSheet.create({
         flexDirection: 'row',
         marginTop: ELEMENT_MARGIN/2,
         marginBottom: ELEMENT_MARGIN/2,
-        marginLeft: ELEMENT_MARGIN + 7,
-        marginRight: ELEMENT_MARGIN + 7,
-    },
-    backButton: {
-      width: 20,
-      height: 20,
-      opacity: 0.9,
-      marginTop: ELEMENT_MARGIN/2 + 2,
-      marginLeft: ELEMENT_MARGIN + 7,
+        marginLeft: ELEMENT_MARGIN,
+        marginRight: ELEMENT_MARGIN,
     },
     webView: {
         backgroundColor: BGWASH,
