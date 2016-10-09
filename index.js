@@ -15,7 +15,6 @@ import Spinner from 'react-native-loading-spinner-overlay';
 
 import styles from './styles'
 
-import BackButton from './BackButton'
 import StatusBar from './StatusBar'
 import AddressBar from './AddressBar'
 import Toolbar from './Toolbar'
@@ -32,9 +31,7 @@ const propTypes = {
     foregroundColor: PropTypes.string,
     backgroundColor: PropTypes.string,
     onNavigationStateChange: PropTypes.func,
-    onShouldStartLoadWithRequest: PropTypes.func,
-    backButtonVisible: PropTypes.bool,
-    onBackPress: PropTypes.func
+    onShouldStartLoadWithRequest: PropTypes.func
 }
 
 const defaultProps = {
@@ -45,8 +42,7 @@ const defaultProps = {
     hideHomeButton: false,
     hideActivityIndicator: false,
     onNavigationStateChange: ()=>{},
-    onShouldStartLoadWithRequest: ()=>true,
-    backButtonVisible: true,
+    onShouldStartLoadWithRequest: ()=>true
 }
 
 class Webbrowser extends BaseComponent {
@@ -97,16 +93,6 @@ class Webbrowser extends BaseComponent {
         />
     }
 
-    renderBackButton() {
-      return (
-        <BackButton
-          visible={this.props.backButtonVisible}
-          onPress={this.props.onBackPress}
-          foregroundColor={this.props.foregroundColor}
-          />
-      );
-    }
-
     renderStatusBar() {
 
         if (this.props.hideStatusBar) {
@@ -141,7 +127,6 @@ class Webbrowser extends BaseComponent {
             <View style={[styles.container, this.props.backgroundColor && {backgroundColor: this.props.backgroundColor}]}>
                 <View style={styles.header}>
                     <View style={{ flexDirection: 'row' }}>
-                      {this.renderBackButton()}
                       {this.renderAddressBar()}
                     </View>
                     {this.renderStatusBar()}
