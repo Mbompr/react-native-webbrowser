@@ -58,6 +58,7 @@ class Webbrowser extends BaseComponent {
             homeButtonEnabled: true,
             loading: true,
             scalesPageToFit: true,
+            onMessage: this.props.onMessage
         };
 
         this._bind(
@@ -106,8 +107,8 @@ class Webbrowser extends BaseComponent {
 
 
     onMessage(event){
-        if("onMessage" in this.props){
-            this.props.onMessage(event);
+        if("onMessage" in this.state){
+            this.state.onMessage(event);
         }
     }
 
