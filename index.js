@@ -106,12 +106,6 @@ class Webbrowser extends BaseComponent {
     }
 
 
-    onMessage(event){
-        if("onMessage" in this.state){
-            this.state.onMessage(event);
-        }
-    }
-
     renderToolbar() {
 
         if (this.props.hideToolbar) {
@@ -150,7 +144,7 @@ class Webbrowser extends BaseComponent {
                     onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
                     startInLoadingState={true}
                     scalesPageToFit={this.state.scalesPageToFit}
-                    onMessage = {this.onMessage}
+                    onMessage={this.state.onMessage}
                 />
                 {this.renderToolbar()}
                 <Spinner visible={this.state.loading} />
