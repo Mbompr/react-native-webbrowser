@@ -49,7 +49,6 @@ class Webbrowser extends BaseComponent {
 
     constructor(props) {
         super(props);
-
         this.state = {
             status: '',
             currentUrl: Utils.sanitizeUrl(this.props.url),
@@ -105,6 +104,13 @@ class Webbrowser extends BaseComponent {
         />
     }
 
+
+    onMessage(event){
+        if("onMessage" in this.props){
+            this.props.onMessage(event);
+        }
+    }
+
     renderToolbar() {
 
         if (this.props.hideToolbar) {
@@ -143,6 +149,7 @@ class Webbrowser extends BaseComponent {
                     onShouldStartLoadWithRequest={this.onShouldStartLoadWithRequest}
                     startInLoadingState={true}
                     scalesPageToFit={this.state.scalesPageToFit}
+                    onMessage = {this.onMessage}
                 />
                 {this.renderToolbar()}
                 <Spinner visible={this.state.loading} />
