@@ -9,7 +9,6 @@ var {
 
 import BaseComponent from './BaseComponent'
 import Utils from './Utils'
-import Spinner from 'react-native-loading-spinner-overlay';
 
 import styles from './styles'
 
@@ -30,7 +29,6 @@ const propTypes = {
     backgroundColor: PropTypes.string,
     onNavigationStateChange: PropTypes.func,
     onShouldStartLoadWithRequest: PropTypes.func,
-    spinning: PropTypes.bool,
 }
 
 const defaultProps = {
@@ -42,7 +40,6 @@ const defaultProps = {
     hideActivityIndicator: false,
     onNavigationStateChange: ()=>{},
     onShouldStartLoadWithRequest: ()=>true,
-    spinning: true,
 }
 
 class Webbrowser extends BaseComponent {
@@ -143,10 +140,6 @@ class Webbrowser extends BaseComponent {
                     scalesPageToFit={this.state.scalesPageToFit}
                 />
                 {this.renderToolbar()}
-                {this.props.spinning? 
-                  <Spinner visible={this.state.loading} />:
-                  null
-                }
             </View>
         );
     }

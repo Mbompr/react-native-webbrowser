@@ -29,7 +29,5 @@
     "url": "https://github.com/d-a-n/react-native-webbrowser/issues"
   },
   "homepage": "https://github.com/d-a-n/react-native-webbrowser#readme",
-  "dependencies": {
-    "react-native-loading-spinner-overlay": "0.0.6"
-  }
+  "dependencies": {}
 }
