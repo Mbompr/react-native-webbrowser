@@ -29,7 +29,8 @@ const propTypes = {
     foregroundColor: PropTypes.string,
     backgroundColor: PropTypes.string,
     onNavigationStateChange: PropTypes.func,
-    onShouldStartLoadWithRequest: PropTypes.func
+    onShouldStartLoadWithRequest: PropTypes.func,
+    spinning: PropTypes.bool,
 }
 
 const defaultProps = {
@@ -41,6 +42,7 @@ const defaultProps = {
     hideActivityIndicator: false,
     onNavigationStateChange: ()=>{},
     onShouldStartLoadWithRequest: ()=>true,
+    spinning: true,
 }
 
 class Webbrowser extends BaseComponent {
@@ -141,7 +143,10 @@ class Webbrowser extends BaseComponent {
                     scalesPageToFit={this.state.scalesPageToFit}
                 />
                 {this.renderToolbar()}
-                <Spinner visible={this.state.loading} />
+                {this.props.spinning? 
+                  <Spinner visible={this.state.loading} />:
+                  null
+                }
             </View>
         );
     }
