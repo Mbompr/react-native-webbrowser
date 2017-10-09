@@ -5,6 +5,6 @@ export default class Utils {
         if (!/^[a-zA-Z-_]+:/.test(url)) {
             url = 'http://' + url;
         }
-        return url.toLowerCase();
+        return url;
     }
 }
